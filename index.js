@@ -1,5 +1,6 @@
 const hero = document.querySelector(".hero");
 const text = document.querySelector("h1");
+const emoji = document.querySelector("span");
 const range = 300;
 
 function shadow(e) {
@@ -25,7 +26,15 @@ function shadow(e) {
         ${-xRange}px ${yRange}px 0 rgba(0,255,255,0.7),
         ${yRange}px ${-xRange}px 0 rgba(255,255,0,0.7),
         ${-yRange}px ${xRange}px 0 rgba(55,255,55,0.7)
-        `;
+  `;
+
+
+  emoji.style.textShadow = `
+              ${xRange}px ${yRange}px 0 inherit,
+              ${-xRange}px ${yRange}px 0 rgba(0,255,255,0.7),
+              ${yRange}px ${-xRange}px 0 rgba(255,255,0,0.7),
+              ${-yRange}px ${xRange}px 0 rgba(55,255,55,0.7)
+              `;
 }
 
 hero.addEventListener("mousemove", shadow);
